@@ -11,7 +11,7 @@ class Product{
         this.quantity = quantity;
     }
 
-    private equacaoValorTotal() {
+    private equacaoValorTotal():number | false {
         if(this.price > 0 && this.quantity > 0){
             return this.price * this.quantity;
         }else{
@@ -20,7 +20,7 @@ class Product{
 
     }
 
-    valorTotal() {
+    valorTotal(): string {
         const valorTotal = this.equacaoValorTotal();
         if(valorTotal){
             return `O valor total do produto '${this.name}' é de: R$${valorTotal}!`
